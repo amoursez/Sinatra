@@ -18,6 +18,8 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import Logo from "../Header/logo.png"
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@emotion/react';
+import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -40,6 +42,11 @@ const customTheme = createTheme({
       secondary: {
         main: "#1e2328",
         contrastText: "#ffff"
+      },
+      warning: {
+        main: "#f5b301",
+        contrastText: "#3b3f46"
+
       }
     }
   });
@@ -211,6 +218,11 @@ export default function MyNavbar() {
             />
           </Search>
           <Box sx={{ flexGrow: 1 }} />
+
+          <Link to='/add'>
+              <Button variant='contained' color={'warning'}>Add</Button>
+          </Link>
+
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="error">

@@ -8,11 +8,13 @@ import { Link, useNavigate } from 'react-router-dom';
 export default function AddProduct() {
     const navigate = useNavigate()
     const [values, setValues] = React.useState({
-        title: '',
+        name: '',
+        artist: '',
+        year: '',
         image: '',
         price: '',
-        type: '',
-        description: ''
+        description: '',
+        tracklist: ''
     })
 
     const { addProduct } = React.useContext(productContext)
@@ -66,10 +68,12 @@ export default function AddProduct() {
                             justifyContent: 'center'
                         }}>
                         <TextField name='name' onChange={handleInp} value={values.name} variant='outlined' label='Name' style={{padding: '10px'}}/>
-                        <TextField name='autor' onChange={handleInp} value={values.autor} variant='outlined' label='Autor' style={{padding: '10px'}}/>
+                        <TextField name='artist' onChange={handleInp} value={values.artist} variant='outlined' label='Artist' style={{padding: '10px'}}/>
+                        <TextField name='year' onChange={handleInp} value={values.year} variant='outlined' label='Year' style={{padding: '10px'}}/>
                         <TextField name='image' onChange={handleInp} value={values.image} variant='outlined' label='Image' style={{padding: '10px'}}/>
-                        <TextField name='description' onChange={handleInp} value={values.description} variant='outlined' label='Description' style={{padding: '10px'}}/>
                         <TextField name='price' onChange={handleInp} value={values.price} variant='outlined' label='Price' style={{padding: '10px'}}/>
+                        <TextField name='description' onChange={handleInp} value={values.description} variant='outlined' label='Description' style={{padding: '10px'}}/>
+                        <TextField name='tracklist' onChange={handleInp} value={values.tracklist} variant='outlined' label='Tracklist' style={{padding: '10px'}}/>
                     </form>
                     <Link to='/'>
                         <Button onClick={handleSave} variant='contained' color='success'>Add</Button>
