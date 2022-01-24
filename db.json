@@ -1,5 +1,63 @@
 {
-    "products": [
-        
-    ]
+  "products": [
+    {
+      "title": "",
+      "image": "WFW",
+      "price": null,
+      "type": "",
+      "description": "FWEFW",
+      "name": "F",
+      "autor": "F",
+      "id": 1
+    },
+    {
+      "title": "",
+      "image": "https://st.depositphotos.com/2000885/1902/i/600/depositphotos_19021343-stock-photo-red-heart.jpg",
+      "price": null,
+      "type": "",
+      "description": "fwef",
+      "name": "fewf",
+      "autor": "efw",
+      "id": 2
+    },
+    {
+      "title": "",
+      "image": "https://st.depositphotos.com/2000885/1902/i/600/depositphotos_19021343-stock-photo-red-heart.jpg",
+      "price": null,
+      "type": "",
+      "description": "fvds",
+      "name": "dfs",
+      "autor": "dwe",
+      "id": 3
+    },
+    {
+      "title": "",
+      "image": "https://st.depositphotos.com/2000885/1902/i/600/depositphotos_19021343-stock-photo-red-heart.jpg",
+      "price": 33,
+      "type": "",
+      "description": "e3e3r",
+      "name": "3232",
+      "autor": "34",
+      "id": 4
+    },
+    {
+      "title": "",
+      "image": "https://st.depositphotos.com/2000885/1902/i/600/depositphotos_19021343-stock-photo-red-heart.jpg",
+      "price": null,
+      "type": "",
+      "description": "fsd",
+      "name": "dscsd",
+      "autor": "dsd",
+      "id": 5
+    },
+    {
+      "title": "",
+      "image": "https://content.onliner.by/news/1100x5616/472baa6904f365c4bae96d6b77c13010.jpeg",
+      "price": null,
+      "type": "",
+      "description": "as",
+      "autor": "as",
+      "id": 6
+    }
+  ]
 }
