@@ -1,4 +1,5 @@
 import React from 'react';
+import MyRoutes from '../../MyRoutes';
 
 const Home = () => {
     return (
