@@ -1,27 +1,21 @@
-import React, { createContext, useReducer } from 'react';
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 
-export const productContext = createContext()
-
-const INIT_STATE = {
-    products: null
+export default function Variants() {
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        '& > :not(style)': {
+          m: 1,
+          width: 128,
+          height: 128,
+        },
+      }}
+    >
+      <Paper variant="outlined" />
+      <Paper variant="outlined" square />
+    </Box>
+  );
 }
-
-const reducer = (state = INIT_STATE, action) => {
-    switch(action.type){
-        case 'GET_PRODUCTS':
-            
-    }
-} 
-
-const ProductsContextsProvider = ({ children }) => {
-    const [state, dispatch] = useReducer()
-    return (
-        <productContext.Provider value={{
-            products: state.products
-        }}>
-            {children}
-        </productContext.Provider>
-    );
-};
-
-export default ProductsContextsProvider;
