@@ -9,8 +9,8 @@ import EditIcon from '@mui/icons-material/Edit';
 import { Link } from 'react-router-dom';
 import { IconButton } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { productContext } from '../../../Contexts/ProductsContexts';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { productContext } from '../../../Contexts/ProductsContexts';
 
 export default function ProductCard({item}) { 
     const { deleteProduct, addProductInCart, checkProductInCart } = React.useContext(productContext)
@@ -25,17 +25,28 @@ export default function ProductCard({item}) {
             <IconButton onClick={() => deleteProduct(item.id)}>
                 <DeleteIcon/>
             </IconButton>
-            <IconButton 
+            {/* <IconButton 
                 aria-label='share' 
                 onClick={() => addProductInCart(item)} 
                 color={checkProductInCart(item.id) ? 'secondary' : 'inherit'}>
                 <ShoppingCartIcon/>
-            </IconButton>
+            </IconButton> */}
         </CardActions>
     )
   return (
     <Card sx={{ maxWidth: 420 }}>
         <Link to={`/detail/${item.id}`} style={{textDecoration: 'none', color: 'black'}}>
+            <CardContent>
+                <Typography gutterBottom variant="h6" component="div">
+                {item.name}
+                </Typography>
+                <Typography gutterBottom variant="p" component="div" sx={{ fontWeight: 'bold'}}>
+                {item.artist}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                {item.year}
+                </Typography>
+            </CardContent>
             <CardMedia
                 component="img"
                 alt="item image"
@@ -43,14 +54,6 @@ export default function ProductCard({item}) {
                 image={item.image}
                 className='cardImg'
             />
-            <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                {item.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                {item.description}
-                </Typography>
-            </CardContent>
         </Link>
 
       <CardContent>

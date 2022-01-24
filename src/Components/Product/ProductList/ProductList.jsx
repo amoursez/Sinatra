@@ -3,11 +3,13 @@ import { experimentalStyled as styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import { productContext } from '../../../Contexts/ProductsContext';
+import { productContext } from '../../../Contexts/ProductsContexts';
 import ProductCard from '../ProductCard/ProductCard';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import { useSearchParams } from 'react-router-dom';
+
+
 
 
 
@@ -40,12 +42,11 @@ export default function ProductList() {
       setSearchParams({'_page': pageVal, '_limit': limit})
       getProducts()
       setPage(pageVal)
-      console.log('hello');
     }
 
   return (
-    <Box sx={{ flexGrow: 1, margin: 4}}>
-      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+     <Box sx={{ flexGrow: 1, margin: 8, display: 'flex', flexDirection: 'column', alignItems: 'center'}} >         
+      <Grid container spacing={{ xs: 2, md: 4 }} columns={{ xs: 4, sm: 8, md: 12 }}>
             {
                 products ? (
                     products.map((item, index) => (
@@ -56,7 +57,7 @@ export default function ProductList() {
                 ) : (<h1>loading...</h1>)
             }
       </Grid>
-      <Stack spacing={2}>
+      <Stack spacing={2} sx={{margin: 5}}>
         <Pagination 
           count={paginatedPages}
           onChange={handlePage}
