@@ -1,10 +1,10 @@
 import React from 'react';
-import MyRoutes from '../../MyRoutes';
+import Content from './Content/Content';
 
 const Home = () => {
     return (
         <div>
-            
+            <Content />
         </div>
     );
 };
