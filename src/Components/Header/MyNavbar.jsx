@@ -16,10 +16,12 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import Logo from "../Header/logo.png"
+import { productContext } from '../../Contexts/ProductsContexts';
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@emotion/react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { Button } from '@mui/material';
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -78,10 +80,32 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function MyNavbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-
+  const { cartLength, getProducts, useAuth, logout  } = React.useContext(productContext)
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  const [searchParams, setSearchParams] = useSearchParams()
+  const [searchVal, setSearchVal] = React.useState(searchParams.get('q') ? searchParams.get('q') : '')
 
+  React.useEffect(() => {
+      setSearchParams({
+        'q': searchVal,
+        '_limit': 3,
+        "_page": 1
+      })
+  }, [searchVal])
+
+  console.log(searchVal)
+  const handleValue = (e) => {
+    // const search = new URLSearchParams(window.location.search)
+    // search.set('q', e.target.value)
+    setSearchVal(e.target.value)
+    setSearchParams({
+        'q': searchVal,
+        '_limit': 3,
+        "_page": 1
+    })
+    getProducts()
+  }
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -215,6 +239,8 @@ export default function MyNavbar() {
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
+              value={searchVal}
+              onChange={handleValue}
             />
           </Search>
           <Box sx={{ flexGrow: 1 }} />
