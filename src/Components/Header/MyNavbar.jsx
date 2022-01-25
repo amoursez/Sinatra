@@ -21,6 +21,9 @@ import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@emotion/react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Button } from '@mui/material';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { productContext } from '../../Contexts/ProductsContexts';
+
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -80,6 +83,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function MyNavbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+
   const { cartLength, getProducts, useAuth, logout  } = React.useContext(productContext)
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -222,6 +226,7 @@ export default function MyNavbar() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
+            <Link to='/'>
                  <Box
         component="img"
         sx={{
@@ -231,6 +236,7 @@ export default function MyNavbar() {
         alt="lOGO"
         src={Logo}
       />
+            </Link>
           </Typography>
           <Search>
             <SearchIconWrapper>
@@ -248,6 +254,28 @@ export default function MyNavbar() {
           <Link to='/add'>
               <Button variant='contained' color={'warning'}>Add</Button>
           </Link>
+
+              {/* {(cartLength > 0) ?
+          (<Link to='/cart' style={{color: 'white'}}>
+            <IconButton color='inherit'>
+                <Badge badgeContent={cartLength} color='error'
+                  >
+                    <ShoppingCartIcon/>
+                </Badge> 
+            </IconButton>
+          </Link>)
+               : (null)} */}
+
+          
+          <Link to='/cart' style={{color: 'white'}}>
+            <IconButton color='inherit'>
+                <Badge badgeContent={cartLength} color='error'
+                  >
+                    <ShoppingCartIcon/>
+                </Badge> 
+            </IconButton>
+          </Link>
+
 
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
