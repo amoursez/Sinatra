@@ -6,6 +6,7 @@ import Home from './Components/Home/Home';
 import AddProduct from './Components/Admin/AddProduct/AddProduct';
 import EditProduct from './Components/Admin/EditProduct/EditProduct';
 import ProductDetail from './Components/Product/ProductDetail/ProductDetail';
+import Cart from './Components/Cart/Cart';
 
 
 const MyRoutes = () => {
@@ -19,6 +20,7 @@ const MyRoutes = () => {
 
                     <Route path='/' element={<Home />}/>
                     <Route path='/detail/:id' element={<ProductDetail/>} />
+                    <Route path='/cart' element={<Cart/>} />
                 </Routes>
             </BrowserRouter>
         </ProductsContextProvider>

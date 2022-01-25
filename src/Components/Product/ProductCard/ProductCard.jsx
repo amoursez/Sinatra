@@ -25,12 +25,12 @@ export default function ProductCard({item}) {
             <IconButton onClick={() => deleteProduct(item.id)}>
                 <DeleteIcon/>
             </IconButton>
-            {/* <IconButton 
+            <IconButton 
                 aria-label='share' 
                 onClick={() => addProductInCart(item)} 
                 color={checkProductInCart(item.id) ? 'secondary' : 'inherit'}>
                 <ShoppingCartIcon/>
-            </IconButton> */}
+            </IconButton>
         </CardActions>
     )
   return (
