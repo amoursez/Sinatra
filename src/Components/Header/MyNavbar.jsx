@@ -89,6 +89,8 @@ export default function MyNavbar() {
   const [searchParams, setSearchParams] = useSearchParams()
   const [searchVal, setSearchVal] = React.useState(searchParams.get('q') ? searchParams.get('q') : '')
 
+  const currentUser = useAuth()
+
   React.useEffect(() => {
       setSearchParams({
         'q': searchVal,
@@ -97,7 +99,7 @@ export default function MyNavbar() {
       })
   }, [searchVal])
 
-  console.log(searchVal)
+  // console.log(searchVal)
   const handleValue = (e) => {
     // const search = new URLSearchParams(window.location.search)
     // search.set('q', e.target.value)
@@ -109,6 +111,16 @@ export default function MyNavbar() {
     })
     getProducts()
   }
+
+  async function handleLogout(){
+    try{
+        await logout()
+    } catch(error){
+        console.log(error);
+    }
+  }
+
+
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -127,7 +139,7 @@ export default function MyNavbar() {
   };
 
   const menuId = 'primary-search-account-menu';
-  const renderMenu = (
+    const renderMenu = (
     <Menu 
       anchorEl={anchorEl}
       anchorOrigin={{
@@ -143,10 +155,17 @@ export default function MyNavbar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-    </Menu>
-  );
+     
+      <Link to='/login'>
+          <MenuItem>Login</MenuItem>
+        </Link>
+        <Link to='/register'>
+          <MenuItem>Register</MenuItem>
+        </Link>
+      </Menu>
+      
+  )
+
   
   
  
@@ -250,21 +269,20 @@ export default function MyNavbar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
 
-          <Link to='/add'>
-              <Button variant='contained' color={'warning'}>Add</Button>
-          </Link>
+          {currentUser?.email === 'sinatra@admin.com' ? (
+                <Link to='/add'>
+                  <Button variant='contained' color={'warning'}>Add</Button>
+                </Link>
+          ) : (null)}
 
-              {/* {(cartLength > 0) ?
-          (<Link to='/cart' style={{color: 'white'}}>
-            <IconButton color='inherit'>
-                <Badge badgeContent={cartLength} color='error'
-                  >
-                    <ShoppingCartIcon/>
-                </Badge> 
-            </IconButton>
-          </Link>)
-               : (null)} */}
+            {currentUser?.email}
+            {currentUser? (
+                <Button variant='success' disabled={!currentUser} onClick={handleLogout}>Log out</Button>) :
+                (null)
 
+            }
+
+          
           
           <Link to='/cart' style={{color: 'white'}}>
             <IconButton color='inherit'>
@@ -282,7 +300,8 @@ export default function MyNavbar() {
                 <MailIcon />
               </Badge>
             </IconButton>
-            <IconButton
+            {!currentUser ? 
+            (<IconButton
               size="large"
               edge="end"
               aria-label="account of current user"
@@ -290,9 +309,18 @@ export default function MyNavbar() {
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
               color="inherit"
-            >
+              >
               <AccountCircle />
             </IconButton>
+            ) :
+            (<IconButton
+              disabled
+              color="inherit"
+              >
+              <AccountCircle />
+            </IconButton>
+            )
+          }
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton

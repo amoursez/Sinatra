@@ -8,7 +8,12 @@ import AddProduct from './Components/Admin/AddProduct/AddProduct';
 import EditProduct from './Components/Admin/EditProduct/EditProduct';
 import ProductDetail from './Components/Product/ProductDetail/ProductDetail';
 import Cart from './Components/Cart/Cart';
+
+import Register from './Components/Auth/Register/Register';
+import Login from './Components/Auth/Login/Login';
+
 import Checkout from './Components/PayForm/Checkout';
+
 
 const MyRoutes = () => {
     return (
@@ -22,7 +27,12 @@ const MyRoutes = () => {
                     <Route path='/' element={<Home />}/>
                     <Route path='/detail/:id' element={<ProductDetail/>} />
                     <Route path='/cart' element={<Cart/>} />
+
+                    <Route path='/register' element={<Register />} />
+                    <Route path='/login' element={<Login />} />
+
                     <Route path='/payform' element={<Checkout/>} />
+
 
                 </Routes>
                 <Footer />
