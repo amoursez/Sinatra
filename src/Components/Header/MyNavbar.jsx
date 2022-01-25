@@ -22,7 +22,6 @@ import { ThemeProvider } from '@emotion/react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Button } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { productContext } from '../../Contexts/ProductsContexts';
 
 
 

@@ -8,8 +8,9 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { productContext } from '../../Contexts/ProductsContexts';
-import { Button, Typography } from '@mui/material';
+import { Button, Link, Typography } from '@mui/material';
 import { calcTotalPrice } from '../../Helpers/CalcPrice';
+import { useNavigate } from 'react-router-dom'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -31,13 +32,15 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
+
+
 export default function Cart() {
     const { cart, getCart, changeProductCount } = React.useContext(productContext)
 
     React.useEffect(() => {
         getCart()
     }, [])
-
+    const navigate = useNavigate()
 
 
   return (
@@ -91,7 +94,9 @@ export default function Cart() {
             </TableRow>
             <TableRow>
                 <TableCell colSpan={3} align='right'>
-                    <Button variant='contained' color='primary'>Buy</Button>
+                <Link to='/payform'>
+                    <Button variant='contained' onClick={() => navigate('/payform')} color='primary'>Buy</Button>
+                 </Link>
                 </TableCell>
             </TableRow>
         </TableBody>
