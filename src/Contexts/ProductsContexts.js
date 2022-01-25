@@ -1,7 +1,9 @@
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useEffect, useReducer, useState } from 'react';
 import axios from 'axios';
 import { API } from '../Helpers/Constants'
 import { calcSubPrice, calcTotalPrice } from '../Helpers/CalcPrice';
+import { auth } from '../Firebase';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 
 export const productContext = createContext()
 
@@ -203,6 +205,32 @@ const ProductsContextProvider = ({ children }) => {
 
     //! end of cart
 
+    //! SignIn / SignUP
+    function signUp(email, password) {
+        return createUserWithEmailAndPassword(auth, email, password)
+    }
+
+    function signIn(email, password) {
+        return signInWithEmailAndPassword(auth, email, password)
+    }
+
+    function useAuth () {
+        const [currentUser, setCurrentUser] = useState()
+
+        useEffect(() => {
+            const unsub = onAuthStateChanged(auth, user => 
+               setCurrentUser(user))
+               return unsub
+        }, [])
+
+        return currentUser
+    }
+
+    function logout(){
+        return signOut(auth)
+    }
+
+
     return (
         
         <productContext.Provider value={{
@@ -223,6 +251,10 @@ const ProductsContextProvider = ({ children }) => {
             getCart,
             changeProductCount,
             checkProductInCart,
+            signUp,
+            signIn,
+            useAuth,
+            logout,
         }}>
             {children}
         </productContext.Provider>

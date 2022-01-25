@@ -8,6 +8,8 @@ import AddProduct from './Components/Admin/AddProduct/AddProduct';
 import EditProduct from './Components/Admin/EditProduct/EditProduct';
 import ProductDetail from './Components/Product/ProductDetail/ProductDetail';
 import Cart from './Components/Cart/Cart';
+import Register from './Components/Auth/Register/Register';
+import Login from './Components/Auth/Login/Login';
 
 
 const MyRoutes = () => {
@@ -22,6 +24,8 @@ const MyRoutes = () => {
                     <Route path='/' element={<Home />}/>
                     <Route path='/detail/:id' element={<ProductDetail/>} />
                     <Route path='/cart' element={<Cart/>} />
+                    <Route path='/register' element={<Register />} />
+                    <Route path='/login' element={<Login />} />
                 </Routes>
                 <Footer />
             </BrowserRouter>
