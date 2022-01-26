@@ -13,6 +13,8 @@ import Register from './Components/Auth/Register/Register';
 import Login from './Components/Auth/Login/Login';
 
 import Checkout from './Components/PayForm/Checkout';
+import Content from './Components/Home/Content/Content';
+import Products from './Components/Product/Products';
 
 
 const MyRoutes = () => {
@@ -27,7 +29,7 @@ const MyRoutes = () => {
                     <Route path='/' element={<Home />}/>
                     <Route path='/detail/:id' element={<ProductDetail/>} />
                     <Route path='/cart' element={<Cart/>} />
-
+                    <Route path='/products' element={<Products/>}/>
                     <Route path='/register' element={<Register />} />
                     <Route path='/login' element={<Login />} />
 

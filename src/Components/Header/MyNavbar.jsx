@@ -51,6 +51,10 @@ const customTheme = createTheme({
         main: "#f5b301",
         contrastText: "#3b3f46"
 
+      },
+      primary: {
+        main: '#ffff',
+        contrastText: "#3b3f46"
       }
     }
   });
@@ -120,7 +124,6 @@ export default function MyNavbar() {
     }
   }
 
-
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -156,20 +159,18 @@ export default function MyNavbar() {
       onClose={handleMenuClose}
     >
      
-      <Link to='/login'>
-          <MenuItem>Login</MenuItem>
+      <Link to='/login' style={{ textDecoration: 'none' }}>
+          <MenuItem sx={{color: '#1e2328'}}>Login</MenuItem>
         </Link>
-        <Link to='/register'>
-          <MenuItem>Register</MenuItem>
+        <Link to='/register' style={{ textDecoration: 'none' }}>
+          <MenuItem sx={{color: '#1e2328'}}>Register</MenuItem>
         </Link>
       </Menu>
       
   )
 
   
-  
- 
-  
+
   const mobileMenuId = 'primary-search-account-menu-mobile';
   const renderMobileMenu = (
     <Menu
@@ -267,10 +268,19 @@ export default function MyNavbar() {
               onChange={handleValue}
             />
           </Search>
+          <Box sx={{ flexGrow: 1}}>
+          <Link to='/products' style={{ textDecoration: 'none' }}>
+          <Button variant="text" color='primary'>Products</Button>
+          </Link>
+          <Button variant="text" color='primary'>About Us</Button>
+          <Button variant="text" color='primary'>Contacts</Button>
+          </Box>
+
           <Box sx={{ flexGrow: 1 }} />
+          
 
           {currentUser?.email === 'sinatra@admin.com' ? (
-                <Link to='/add'>
+                <Link to='/add' style={{ textDecoration: 'none', marginRight: 8 }}>
                   <Button variant='contained' color={'warning'}>Add</Button>
                 </Link>
           ) : (null)}
