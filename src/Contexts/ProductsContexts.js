@@ -14,6 +14,8 @@ const INIT_STATE = {
     detail: {},
     cart: {},
     cartLength: 0,
+    favorites: {},
+    favoritesLength: 0
 }
 
 const reducer = (state = INIT_STATE, action) => {
@@ -38,6 +40,14 @@ const reducer = (state = INIT_STATE, action) => {
         case 'CHANGE_CART_COUNT':
             return {
                 ...state, cart: action.payload
+            }; 
+        case 'CHANGE_FAVOURITES_COUNT':
+            return {
+                ...state, favorites: action.payload
+            }; 
+        case 'GET_FAVORITES':
+            return {
+                ...state, favorites: action.payload
             };       
         default: 
             return state    
@@ -221,10 +231,111 @@ const ProductsContextProvider = ({ children }) => {
           } 
     } 
       items = JSON.stringify(items); 
-      console.log(items) 
+    //   console.log(items) 
       localStorage.setItem("cart", items); 
       getCart() 
     }
+
+    //! favorites
+
+    const addProductInFavorites = (product) => {
+        let favorites = JSON.parse(localStorage.getItem('favorites'))
+        if(!favorites){
+            favorites = {
+                products: [],
+            }
+        }
+        let newProduct = {
+            item: product
+        }
+
+        let filteredFav = favorites.products.filter(elem => elem.item.id === product.id)
+        if(filteredFav.length > 0){
+            favorites.products = favorites.products.filter(elem => elem.item.id !== product.id)
+        } else {
+            favorites.products.push(newProduct)
+        }
+        
+        localStorage.setItem('favorites', JSON.stringify(favorites))
+        dispatch({
+            type: 'CHANGE_FAVOURITES_COUNT',
+            payload: favorites.products.length
+        })
+    }
+
+    
+    const getFavoritesLength = () => {
+        let favorites = JSON.parse(localStorage.getItem('favorites'))
+        if(!favorites){
+            favorites = {
+                products: []
+            }
+        }
+        dispatch({
+            type: 'CHANGE_FAVOURITES_COUNT',
+            payload: favorites.products.length
+        })
+    }
+
+    
+    const getFavorites = () => {
+        let favorites = JSON.parse(localStorage.getItem('favorites'))
+        if(!favorites){
+            favorites = {
+                products: [],
+            }
+        }
+        dispatch({
+            type: 'GET_FAVORITES',
+            payload: favorites
+        })
+    }
+
+    // const changeFavouriteProductCount = (count, id) => {
+    //     let favorites = JSON.parse(localStorage.getItem('favorites'))
+    //     favorites.products = favorites.products.map(elem => {
+    //         if(elem.item.id === id){
+    //             elem.count = count
+    //             elem.subPrice = calcSubPrice(elem)
+    //         }
+    //         return elem
+    //     })
+    //     favorites.totalPrice = calcTotalPrice(favorites.products)
+    //     localStorage.setItem('favorites', JSON.stringify(favorites))
+    //     getFavorites()
+    // }
+
+    const checkProductInFavorites = (id) => {
+        let favorites = JSON.parse(localStorage.getItem('favorites'))
+        if(!favorites){
+            favorites = {
+                products: [],
+            }
+        }
+        let newFav = favorites.products.filter(elem => elem.item.id === id)
+        return newFav.length > 0 ? true : false
+    }
+
+    
+    //! DeleteFromFavorites
+ 
+    const deleteFromFavorites =(id)=>{ 
+        let items = JSON.parse(localStorage.getItem('favorites')) 
+        for (let i =0; i< items.products.length; i++) { 
+          let targetItem = JSON.parse(items.products[i].item.id);            
+          if (targetItem === id) { 
+              items.products.splice(i, 1); 
+          } 
+         
+    } 
+      items = JSON.stringify(items); 
+    //   console.log(items) 
+      localStorage.setItem("favorites", items); 
+      getFavorites() 
+    }
+    //! end of favorites
+
+
     //! SignIn / SignUP
     function signUp(email, password) {
         return createUserWithEmailAndPassword(auth, email, password)
@@ -260,6 +371,8 @@ const ProductsContextProvider = ({ children }) => {
             detail: state.detail,
             cart: state.cart,
             cartLength: state.cartLength,
+            favorites: state.favorites,
+            favoritesLength: state.favoritesLength,
             addProduct,
             getProducts,
             editProduct,
@@ -276,6 +389,11 @@ const ProductsContextProvider = ({ children }) => {
             signIn,
             useAuth,
             logout,
+            addProductInFavorites,
+            getFavoritesLength,
+            checkProductInFavorites,
+            getFavorites,
+            deleteFromFavorites
         }}>
             {children}
         </productContext.Provider>

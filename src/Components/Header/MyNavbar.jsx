@@ -22,6 +22,7 @@ import { ThemeProvider } from '@emotion/react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Button } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 
 
@@ -302,14 +303,13 @@ export default function MyNavbar() {
                 </Badge> 
             </IconButton>
           </Link>
-
+          <Link to='/favorites' style={{color: 'white'}}>
+            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+                <FavoriteIcon /> 
+            </IconButton>
+          </Link>
 
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton>
             {!currentUser ? 
             (<IconButton
               size="large"

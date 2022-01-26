@@ -15,6 +15,7 @@ import Login from './Components/Auth/Login/Login';
 import Checkout from './Components/PayForm/Checkout';
 import Content from './Components/Home/Content/Content';
 import Products from './Components/Product/Products';
+import Favorites from './Components/Favorites/Favorites';
 
 
 const MyRoutes = () => {
@@ -32,7 +33,7 @@ const MyRoutes = () => {
                     <Route path='/products' element={<Products/>}/>
                     <Route path='/register' element={<Register />} />
                     <Route path='/login' element={<Login />} />
-
+                    <Route path='/favorites' element={<Favorites/>} />
                     <Route path='/payform' element={<Checkout/>} />
 
 

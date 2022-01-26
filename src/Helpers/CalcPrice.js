@@ -14,3 +14,4 @@ export function getProductsInCart(){
     let cart = JSON.parse(localStorage.getItem('cart'))
     return cart ? cart.products.lenght : 0
 }
+
