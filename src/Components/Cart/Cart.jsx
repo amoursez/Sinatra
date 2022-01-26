@@ -11,6 +11,8 @@ import { productContext } from '../../Contexts/ProductsContexts';
 import { Button, Link, Typography } from '@mui/material';
 import { calcTotalPrice } from '../../Helpers/CalcPrice';
 import { useNavigate } from 'react-router-dom'
+import { IconButton } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -36,7 +38,8 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 export default function Cart() {
     const { cart, getCart, changeProductCount } = React.useContext(productContext)
-
+    const { deleteFromCart } = React.useContext(productContext)
+    
     React.useEffect(() => {
         getCart()
     }, [])
@@ -53,6 +56,8 @@ export default function Cart() {
             <StyledTableCell align="right">Price</StyledTableCell>
             <StyledTableCell align="right">Count</StyledTableCell>
             <StyledTableCell align="right">Subprice</StyledTableCell>
+            <StyledTableCell align="right">Delete</StyledTableCell>
+  
           </TableRow>
         </TableHead>
         <TableBody>
@@ -74,6 +79,12 @@ export default function Cart() {
                             />
                         </StyledTableCell>
                         <StyledTableCell align="right">{elem.subPrice}</StyledTableCell>
+                        <StyledTableCell align="right">
+                          <IconButton  aria-label="delete" onClick={e =>deleteFromCart(elem.item.id, elem.item.price)}> 
+                          <DeleteIcon /> 
+                        </IconButton>
+                        </StyledTableCell>
+                       
                         </StyledTableRow>
                     ))}
                 </>
@@ -95,7 +106,7 @@ export default function Cart() {
             <TableRow>
                 <TableCell colSpan={3} align='right'>
                 <Link to='/payform'>
-                    <Button variant='contained' onClick={() => navigate('/payform')} color='primary'>Buy</Button>
+                    <Button variant='contained'  onClick={() => navigate('/payform')} color='primary'>Buy</Button>
                  </Link>
                 </TableCell>
             </TableRow>

@@ -101,6 +101,7 @@ const ProductsContextProvider = ({ children }) => {
         try {
             await axios.delete(`${API}/${id}`)
             getProducts()
+           
         } catch (error) {
             console.log(error);
         }
@@ -204,7 +205,26 @@ const ProductsContextProvider = ({ children }) => {
     }
 
     //! end of cart
-
+    //! DeleteFromCart 
+ 
+    const deleteFromCart =(id, price)=>{ 
+        let items = JSON.parse(localStorage.getItem('cart')) 
+        for (let i =0; i< items.products.length; i++) { 
+          let targetItem = JSON.parse(items.products[i].item.id); 
+          let targetItemPrice = JSON.parse(items.products[i].item.price); 
+           
+          if (targetItem == id) { 
+              items.products.splice(i, 1); 
+          } 
+          if (targetItemPrice == price){ 
+            items.totalPrice = items.totalPrice - price 
+          } 
+    } 
+      items = JSON.stringify(items); 
+      console.log(items) 
+      localStorage.setItem("cart", items); 
+      getCart() 
+    }
     //! SignIn / SignUP
     function signUp(email, password) {
         return createUserWithEmailAndPassword(auth, email, password)
@@ -251,6 +271,7 @@ const ProductsContextProvider = ({ children }) => {
             getCart,
             changeProductCount,
             checkProductInCart,
+            deleteFromCart,
             signUp,
             signIn,
             useAuth,
