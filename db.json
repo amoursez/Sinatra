@@ -1,0 +1,160 @@
+
+{
+  "products": [
+    {
+      "name": "Ultimate Sinatra",
+      "artist": "Frank Sinatra",
+      "year": "2015",
+      "image": "https://m.media-amazon.com/images/I/7189QMbHwFL._SL1500_.jpg",
+      "price": 45,
+      "description": "The defining voice of the 20th century, Frank Sinatra enjoyed a legendary recording career that spanned six decades, beginning with his earliest session in 1939 and culminating with his last in 1993, for his world-renowned, multi-platinum Duets and Duets II albums. Ultimate Sinatra presents key recordings spanning the Chairman of the Board s recordings for Columbia, Capitol and Reprise, together for the first time. Ultimate Sinatra's 180-gram 2LP version brims with 24 stellar recordings representing a cross-section of Sinatra's unparalleled recording career. Led by 'All Or Nothing At All,' this collection is stacked with standouts, including 'I'll Never Smile Again' (1940), 'I've Got The World On A String' (1953), 'In The Wee Small Hours Of The Morning' (1955), 'I've Got You Under My Skin' (1956), 'Come Fly With Me' (1957), 'The Way You Look Tonight' (1964), 'Fly Me To The Moon (In Other Words)' (1964), 'Strangers In The Night' (1966), 'My Way' (1968), and 'Theme From New York, New York' (1979), among many more.",
+      "tracklist": "All Or Nothing At All, I’ll Never Smile Again, Saturday Night (Is The Loneliest Night Of The Week), Nancy (With The Laughing Face), I’ve Got The World On A String, Young At Heart, In The Wee Small Hours Of The Morning, Learnin’ The Blues, Love And Marriage, I’ve Got You Under My Skin, Witchcraft, All The Way",
+      "genre": "pop",
+      "id": 1
+    },
+    {
+      "name": "Abbey Road Anniversary",
+      "artist": "The Beatles",
+      "year": "2019",
+      "image": "https://m.media-amazon.com/images/I/81dUVKQDBEL._SL1200_.jpg",
+      "price": 20,
+      "description": "The new Abbey Road release features the new stereo album mix, sourced directly from the original eight-track session tapes. To produce the mix, Giles Martin working with Sam Okell, was guided by the album’s original stereo mix supervised by his father, George Martin.",
+      "tracklist": "Come Together, Something,Maxwell’s Silver Hammer,Oh! Darling,Octopus’s Garden,I Want You (She’s So Heavy),Here Comes The Sun,Because,You Never Give Me Your Money,Sun King,Mean Mr Mustard,Polythene Pam,She Came In Through The Bathroom Window,Golden Slumbers,Carry That Weight,The End,Her Majesty",
+      "genre": "rock",
+      "id": 2
+    },
+    {
+      "name": "My Way",
+      "artist": "Frank Sinatra",
+      "year": "1969",
+      "image": "https://upload.wikimedia.org/wikipedia/en/3/34/SinatraMyWay.jpg",
+      "price": 4800,
+      "description": "The album is mainly a collection of then-contemporary pop songs, such as Simon and Garfunkel's \"Mrs. Robinson\", and The Beatles' \"Yesterday\", French songs such as \"If You Go Away\", and the anthemic title song \"My Way\", which effectively became Sinatra's theme song in this stage of his career.",
+      "tracklist": "Watch What Happens,Didn't We?,Hallelujah, I Love Her So,Yesterday,All My Tomorrows,My Way,A Day in the Life of a Fool,For Once in My Life,If You Go Away,Mrs. Robinson",
+      "genre": "pop",
+      "id": 3
+    },
+    {
+      "name": "Legend",
+      "artist": "Bob Marley",
+      "year": "1984",
+      "image": "https://m.media-amazon.com/images/I/51DWv2t4UVL.jpg",
+      "price": 800,
+      "description": "Bob Marley & The Wailers' \"Legend\" is one of the best-selling and most popular albums of all time. It continues to touch millions of people today with a wonderful collection of Bob's most memorable songs, from \"One Love / People Get Ready\" to \"Get Up, Stand Up\", \"Is This Love\" to \"Jammin'\", \"Could You Be Loved\" to \"Three Little Birds\" and eight other classics",
+      "tracklist": "Is This Love,No Woman, No Cry,Could You Be Loved,Three Little Birds,Buffalo Soldier,Get Up, Stand Up,Stir It Up,Side Two,One Love / People Get Ready,I Shot The Sheriff,Waiting In Vain,Redemption Song,Satisfy My Soul,Exodus,Jamming",
+      "genre": "reggae",
+      "id": 4
+    },
+    {
+      "name": "Bad",
+      "artist": "Michael Jackson ",
+      "year": "1987",
+      "image": "https://m.media-amazon.com/images/I/71xG+qsDb+L._SL1500_.jpg",
+      "price": "2200",
+      "description": "Limited vinyl LP repressing in gatefold jacket. Bad is the seventh solo studio album by Michael Jackson. It was released on August 31, 1987, nearly five years after Jackson&aposs previous studio album, Thriller. Bad was recorded during the first half of 1987. The lyrical themes on the record relate to media bias, paranoia, racial profiling, romance, self-improvement and world peace. The album is widely regarded as having cemented Jackson&aposs status as one of the most successful artists of the 1980s, as well as enhancing his solo career and being one of the best musical projects of his career. Five of the singles hit #1 in the United States, while a sixth charted within the Top Ten, and a seventh charted within the Top Twenty on the Hot 100. Bad peaked at 1 in thirteen countries and charted within the Top Twenty in other territories.",
+      "tracklist": "Bad,The Way You Make Me Feel,Speed Demon,Liberian Girl,Just Good Friends,Another Part of Me,Man in the Mirror,I Just Can't Stop Loving You - Michael Jackson Feat. Siedah Garrett,Dirty Diana,Smooth Criminal",
+      "genre": "pop",
+      "id": 5
+    },
+    {
+      "name": "Ella And Louis",
+      "artist": "Louis Armstrong & Ella Fitzgerald",
+      "year": "1956",
+      "image": "https://m.media-amazon.com/images/I/71JQutzckhS._SL1200_.jpg",
+      "price": 4000,
+      "description": "The evening before Louis Armstrong recorded this album, both he and Miss Fitzgerald were appearing in an all-star concert also featuring Art Tatum and Oscar Peterson that was recorded for an album entitled Live At The Hollywood Bowl (1956). The following day the two singers, along with the Oscar Peterson Trio, were in a Los Angeles studio to record this gem of an album. With no time for rehearsals the songs were all set in Louis' key to make it easier, but this in no way inhibits Ella's performance. Another challenge for Pops was the fact that the material was not his normal repertoire, meaning he had to learn things on the fly in the studio. Again there's no hint of any issues, which all goes to highlight Armstrong's innate musical ability.",
+      "tracklist": "Can't We Be Friends,Isn’t This A Lovely Day,Moonlight in Vermont,They Can't Take that Away From Me,Under A Blanket Of Blue,Tenderly,A Foggy Day,Stars Fell On Alabama,Cheek To Cheek,The Nearness Of You",
+      "genre": "jazz",
+      "id": 6
+    },
+    {
+      "name": "Basin Street Blues",
+      "artist": "Louis Armstrong ",
+      "year": "1982",
+      "image": "https://m.media-amazon.com/images/I/613dTdbklmS._SL1200_.jpg",
+      "price": 3500,
+      "description": "Louis Armstrong and his All-Stars are captured in rare form during this live recording from 1956, which is finally make it's vinyl debut with this audiophile-grade pressing. The album features a great collection of tunes which had become staples of Armstrong's live shows, including his perennial opener, \"Indiana\"; the crowd favorite, \"Tiger Rag\"; the always joyful, \"When The Saints Go Marching In\"; and the great title-track, \"Basin Street Blues\". Satch's frontline band at the time boasted the very distinctive sounds of trombonist Trummy Young and clarinetist Ed Hall. Pressed at Pallas Group in Germany.",
+      "tracklist": "When It's Sleepy Time Down South (René/René/Muse),Indiana (MacDonald/Hanley),The Gypsy (Reid),Basin Street Blues (Williams),Tiger Rag (LaRocca),Struttin' With Some Barbecue (Armstrong),Do You Know What It Means To Miss New Orleans? (DeLange/Alter),On The Sunny Side Of The Street (Fields/McHugh),When The Saints Go Marching In (Traditional)",
+      "genre": "blues",
+      "id": 7
+    },
+    {
+      "name": "The Essential Elvis Presley",
+      "artist": "Elvis Presley ",
+      "year": "2016",
+      "image": "https://m.media-amazon.com/images/I/81chYdEggrL._SL1500_.jpg",
+      "price": 150,
+      "description": "The Essential Elvis Presley is a greatest hits collection by American rock and roll icon Elvis Presley. The album was released as a two-disc set on January 2, 2007, by RCA Records as a part of Sony BMG's The Essential series and was later released by RCA and Legacy Recordings as a Limited Edition 3.0 three-disc set.",
+      "tracklist": "That's All Right,Baby, Let's Play House,Mystery Train,Heartbreak Hotel,I Was the One,Blue Suede Shoes,Hound Dog,Don't Be Cruel,Love Me Tender,All Shook Up,(There'll Be) Peace in the Valley (For Me),Jailhouse Rock,Trouble,Fever,It's Now or Never,Reconsider Baby,Are You Lonesome Tonight?,Little Sister,Follow That Dream,Can't Help Falling in Love\n",
+      "genre": "rock&roll",
+      "id": 8
+    },
+    {
+      "name": "Guardians of the Galaxy",
+      "artist": "Tyler Bates ",
+      "year": "2014",
+      "image": "https://m.media-amazon.com/images/I/818s7hspmiL._SL1200_.jpg",
+      "price": 30,
+      "description": "From Marvel, the studio that brought you the global blockbuster franchises of Iron Man, Thor, Captain America and the Avengers, comes a new team-the Guardians of the Galaxy. The 1 CD and 2 CD both feature tracks from the film, featuring artists; 10cc, David Bowie and Jackson 5. The 2 CD deluxe version also includes the score from the movie.",
+      "tracklist": "Hooked On a Feeling - Blue Swede,Go All the Way - Raspberries,Spirit in the Sky - Norman Greenbaum,Moonage Daydream - David Bowie,Fooled Around and Fell in Love - Elvin Bishop,I’m Not in Love - 10cc,I Want You Back - The Jackson 5,Come and Get Your Love - Redbone,Cherry Bomb - The Runaways,Escape (The Pina Colada Song) - Rupert Holmes,O-o-h Child - The Five Stairsteps,Ain’t No Mountain High Enough - Marvin Gaye & Tammi Terrell ",
+      "genre": "pop",
+      "id": 9
+    },
+    {
+      "name": "SLOWHAND",
+      "artist": "Eric Clapton",
+      "year": "1977",
+      "image": "https://cdn.shopify.com/s/files/1/0117/4483/7728/products/CLAPTONERISLOWHAND_2048x.png?v=1590943440",
+      "price": 2000,
+      "description": "Fifth solo studio album by the British rock and blues guitarist, singer and songwriter. The produced the two hit singles, 'Lay Down Sally' and 'Wonderful Tonight'.",
+      "tracklist": "Cocaine - Eric Clapton,Wonderful Tonight - Eric Clapton,Lay Down Sally - Eric Clapton,Next Time You See Her - Eric Clapton,We’re All the Way - Eric Clapton,The Core - Eric Clapton,May You Never - Eric Clapton,Mean Old Frisco - Eric Clapton,Peaches and Diesel - Eric Clapton",
+      "genre": "rock",
+      "id": 10
+    },
+    {
+      "name": "LIVE AT THE REGAL",
+      "artist": "B.B. KING",
+      "year": "1965",
+      "image": "https://cdn.shopify.com/s/files/1/0117/4483/7728/products/KINGBBLIVEATTHER_2019-12-02_12-47-16_txhLigMHqK_2048x.png?v=1595512394",
+      "price": 3000,
+      "description": "Live at the Regal' is a 1965 live album by American blues guitarist and singer B.B. King. It was recorded on November 21, 1964 at the Regal Theater in Chicago.",
+      "tracklist": "Every Day I Have the Blues (Introduction By Pervis Spann) - B.B. King,Sweet Little Angel - B.B. King,It's My Own Fault - B.B. King,How Blue Can You Get? - B.B. King,Please Love Me - B.B. King,You Upset Me Baby (Introduction By E. Rodney Jones) - B.B. King,Worry, Worry - B.B. King,Woke Up This Mornin' - B.B. King,You Done Lost Your Good Thing Now - B.B. King,Help the Poor - B.B. King",
+      "genre": "blues",
+      "id": 11
+    },
+    {
+      "name": "The Essential Dean Martin",
+      "artist": "Dean Martin",
+      "year": "2000",
+      "image": "https://m.media-amazon.com/images/I/71K99fVEAiL._SL1500_.jpg",
+      "price": 400,
+      "description": "Two guitar legends - Eric Clapton and B.B. King - first performed together in NYC in 1967. Over 30 years later, in 1999, the two longtime friends joined forces to create a collection of all new studio recordings of blues classics and contemporary songs. The resulting album 'Riding with the King' would be released in June 2000 and go onto sell over 4 million copies globally and win a Grammy Award for Best Traditional Blues Album.",
+      "tracklist": "Ain't That a Kick in the Head?,That's Amore,Memories Are Made of This,Just in Time,Sway,I'd Cry Like a Baby,Volare (Nel Blu di Pinto di Blu),Under the Bridges of Paris,Love Me,If,Mambo Italiano,Let Me Go, Lover!,Standing on the Corner,You Belong to Me,Innamorata (Sweetheart)",
+      "genre": "jazz",
+      "id": 12
+    },
+    {
+      "name": "BAND OF GYPSIES",
+      "artist": "Jimi Hendrix",
+      "year": "1970",
+      "image": "https://cdn.shopify.com/s/files/1/0117/4483/7728/products/HENDRIXJIMBANDOFGYPS_5000x.png?v=1591640698",
+      "price": 2900,
+      "description": "1970 live album by Jimi Hendrix, and the first without his original group, the Jimi Hendrix Experience. It was recorded on January 1, 1970, at the Fillmore East in New York City with Billy Cox on bass and Buddy Miles on drums, frequently referred to as the Band of Gypsys.",
+      "tracklist": "Who Knows,Machine Gun,Change,Power to Love,Message to Love,We Gotta Live Together",
+      "genre": "rock",
+      "id": 13
+    },
+    {
+      "name": "Star Wars",
+      "artist": "John Williams",
+      "year": "1977",
+      "image": "https://i.discogs.com/bs7YJWRMsT2nDbvbrurbx7r4tyWX7Xh8Z2TBVt1jX5o/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTUy/ODYyNy0xNDgwMjkz/NTU5LTI4ODMuanBl/Zw.jpeg",
+      "price": 4999,
+      "description": "Recorded over eight sessions at Anvil Studios in Denham, England on March 5, 8-12, 15-16, 1977\nRemixed at The Burbank Studios, Burbank, California\n\nThe title on the cover is just 'Star Wars'. The title on the labels is 'The Original Soundtrack From The 20th Century-Fox Film, Star Wars'.",
+      "tracklist": "Main Title,Imperial Attack,Princess Leia's Theme,The Desert And The Robot Auction,Ben’s Death And TIE Fighter Attack,The Little People Work,Rescue Of The Princess,Inner City,Cantina Band,The Land Of The Sand People,Mouse Robot And Blasting Off,The Return Home,The Walls Converge,The Princess Appears,The Last Battle,The Throne Room And End Title",
+      "genre": "instrumental",
+      "id": 14
+    }
+  ]
+}
+

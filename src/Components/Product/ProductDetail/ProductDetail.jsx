@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { productContext } from '../../../Contexts/ProductsContexts';
 import Paper from '@mui/material/Paper';
@@ -11,6 +11,16 @@ const ProductDetail = () => {
     useEffect(() => {
         getDetail(id)
     }, [id])
+
+
+    // console.log(typeof detail.tracklist);
+
+    
+    // const getTracks = async () => {
+    // let tracks = await detail.tracklist.split(',')   
+    // console.log(tracks)
+    // } 
+    // getTracks()
 
     return (
            <Paper elevation={0} variant="outlined">
@@ -32,6 +42,7 @@ const ProductDetail = () => {
                             >
                                 <Typography variant='h3'>{detail.name}</Typography>
                                 <Typography variant='h4'>{detail.artist}</Typography>
+                                <Typography variant='subtitle1'>{detail.genre}</Typography>
                                 <Typography variant='subtitle1'>{detail.year}</Typography>
                                 <Typography variant='h4'>$ {detail.price}</Typography>
                             </div>
