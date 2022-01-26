@@ -1,89 +1,100 @@
 import * as React from 'react';
-import Typography from '@mui/material/Typography';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import Grid from '@mui/material/Grid';
+import { styled } from '@mui/material/styles';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import { productContext } from '../../Contexts/ProductsContexts';
+import { Button, Link, Typography } from '@mui/material';
+import { calcTotalPrice } from '../../Helpers/CalcPrice';
+import { useNavigate } from 'react-router-dom'
+import { Payment } from '@mui/icons-material';
 
-const products = [
-  {
-    name: 'Product 1',
-    desc: 'A nice thing',
-    price: '$9.99',
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [`&.${tableCellClasses.head}`]: {
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white,
   },
-  {
-    name: 'Product 2',
-    desc: 'Another thing',
-    price: '$3.45',
+  [`&.${tableCellClasses.body}`]: {
+    fontSize: 14,
   },
-  {
-    name: 'Product 3',
-    desc: 'Something else',
-    price: '$6.51',
-  },
-  {
-    name: 'Product 4',
-    desc: 'Best thing of all',
-    price: '$14.11',
-  },
-  { name: 'Shipping', desc: '', price: 'Free' },
-];
+}));
 
-const addresses = ['1 MUI Drive', 'Reactville', 'Anytown', '99999', 'USA'];
-const payments = [
-  { name: 'Card type', detail: 'Visa' },
-  { name: 'Card holder', detail: 'Mr John Smith' },
-  { name: 'Card number', detail: 'xxxx-xxxx-xxxx-1234' },
-  { name: 'Expiry date', detail: '04/2024' },
-];
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  '&:nth-of-type(odd)': {
+    backgroundColor: theme.palette.action.hover,
+  },
+  // hide last border
+  '&:last-child td, &:last-child th': {
+    border: 0,
+  },
+}));
 
-export default function Review() {
+
+
+export default function Cart() {
+    const { cart, getCart, changeProductCount } = React.useContext(productContext)
+
+    React.useEffect(() => {
+        getCart()
+    }, [])
+    
+
   return (
-    <React.Fragment>
-      <Typography variant="h6" gutterBottom>
-        Order summary
-      </Typography>
-      <List disablePadding>
-        {products.map((product) => (
-          <ListItem key={product.name} sx={{ py: 1, px: 0 }}>
-            <ListItemText primary={product.name} secondary={product.desc} />
-            <Typography variant="body2">{product.price}</Typography>
-          </ListItem>
-        ))}
+    <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 500 }} aria-label="customized table">
+        <TableHead>
+          <TableRow>
+            <StyledTableCell>Image</StyledTableCell>
+            <StyledTableCell align="right">Title</StyledTableCell>
+            <StyledTableCell align="right">Price</StyledTableCell>
+            <StyledTableCell align="right">Count</StyledTableCell>
+            <StyledTableCell align="right">Subprice</StyledTableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+            {cart.products ? (
+                <>
+                    {cart.products.map((elem) => (
+                        <StyledTableRow key={elem.item.id}>
+                        <StyledTableCell component="th" scope="row">
+                            <img width='30px' src={elem.item.image} alt={elem.item.title} />
+                        </StyledTableCell>
+                        <StyledTableCell align="right">{elem.item.title}</StyledTableCell>
+                        <StyledTableCell align="right">{elem.item.price}</StyledTableCell>
+                        <StyledTableCell align="right">
+                            <input 
+                                type="number"
+                                value={elem.count}
+                                onChange={(e) => changeProductCount(e.target.value, elem.item.id)}
+                                min = '1'
+                            />
+                        </StyledTableCell>
+                        <StyledTableCell align="right">{elem.subPrice}</StyledTableCell>
+                        </StyledTableRow>
+                    ))}
+                </>
+            ) : (<tr><td><h1>loading...</h1></td></tr>)}
 
-        <ListItem sx={{ py: 1, px: 0 }}>
-          <ListItemText primary="Total" />
-          <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-            $34.06
-          </Typography>
-        </ListItem>
-      </List>
-      <Grid container spacing={2}>
-        <Grid item xs={12} sm={6}>
-          <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
-            Shipping
-          </Typography>
-          <Typography gutterBottom>John Smith</Typography>
-          <Typography gutterBottom>{addresses.join(', ')}</Typography>
-        </Grid>
-        <Grid item container direction="column" xs={12} sm={6}>
-          <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
-            Payment details
-          </Typography>
-          <Grid container>
-            {payments.map((payment) => (
-              <React.Fragment key={payment.name}>
-                <Grid item xs={6}>
-                  <Typography gutterBottom>{payment.name}</Typography>
-                </Grid>
-                <Grid item xs={6}>
-                  <Typography gutterBottom>{payment.detail}</Typography>
-                </Grid>
-              </React.Fragment>
-            ))}
-          </Grid>
-        </Grid>
-      </Grid>
-    </React.Fragment>
+            <TableRow>
+                <TableCell rowSpan={3}/>
+                <TableCell colSpan={2}>
+                    <Typography variant='h5'>Total:</Typography>
+                </TableCell>
+                {
+                    cart.products ? (
+                        <TableCell align='right'>
+                            <Typography variant='h5'>{calcTotalPrice(cart.products)}</Typography>
+                        </TableCell>
+                    ) : (null)
+                }
+            </TableRow>
+        </TableBody>
+      </Table>
+      
+    </TableContainer>
   );
 }
