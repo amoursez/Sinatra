@@ -22,10 +22,10 @@
  /*  justify-content: flex-end;  */
 
 }
-h1{
+.main-title{
   font-size:80px;
   width: 70%;
-  padding: 4% 0px 0px 20%;
+  padding: 2% 0px 0px 10%;
   text-shadow: 2px 2px #000000;
   margin:auto 0;
   z-index: 1000;
@@ -38,6 +38,6 @@ h1{
   color: rgb(255, 191, 16);
 }
  .player{
-   margin-left: 30%;
+  margin-left: 34%;
+  margin-top: 10%;
  }
- 

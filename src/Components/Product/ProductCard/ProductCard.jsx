@@ -15,7 +15,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 
 
 export default function ProductCard({item}) { 
-    const { deleteProduct, addProductInCart, checkProductInCart, addProductInFavorites, checkProductInFavorites } = React.useContext(productContext)
+    const { deleteProduct, addProductInCart, checkProductInCart, addProductInFavorites, checkProductInFavorites, useAuth } = React.useContext(productContext)
 
     const customTheme = createTheme({
         palette: {
@@ -30,17 +30,26 @@ export default function ProductCard({item}) {
           }
         }
       });
+
+      const currentUser = useAuth()
+
     
     let icons = (
         <CardActions disableSpacing>
+
+            {currentUser?.email === 'sinatra@admin.com' ? (
             <Link to={`/edit/${item.id}`}>
                 <IconButton>
                     <EditIcon/>
                 </IconButton>
-            </Link>
+            </Link>) : (null)}
+
+            {currentUser?.email === 'sinatra@admin.com' ? (
             <IconButton onClick={() => deleteProduct(item.id)}>
                 <DeleteIcon/>
-            </IconButton>
+            </IconButton>) 
+            : (null)}
+            
             <IconButton 
                 aria-label='share' 
                 onClick={() => addProductInFavorites(item)} 

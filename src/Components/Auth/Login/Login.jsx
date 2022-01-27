@@ -81,6 +81,7 @@ export default function Login() {
               name="email"
               autoComplete="email"
               autoFocus
+              color="secondary"
             />
             <TextField
               margin="normal"
@@ -91,6 +92,7 @@ export default function Login() {
               type="password"
               id="password"
               autoComplete="current-password"
+              color="secondary"
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="secondary" />}
@@ -105,14 +107,9 @@ export default function Login() {
             >
               Sign In
             </Button>
-            <Grid container>
-              <Grid item xs>
-                {/* <Link>
-                  Forgot password?
-                </Link> */}
-              </Grid>
+            <Grid container justifyContent="center">
               <Grid item>
-                <Link to='/register'>
+                <Link to='/register' style={{color: 'secondary', textDecoration: 'none'}}>
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
