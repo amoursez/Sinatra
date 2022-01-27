@@ -7,6 +7,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 
 const Contacts = () => {
+    const map = require('./map.png');
     return (
         <Box
       sx={{
@@ -22,12 +23,16 @@ const Contacts = () => {
         },
       }}
     >
-      <Paper sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+      <Paper sx={{display: 'flex', alignItems: 'center'}}>
+          <div>
+          <img src={map} style={{width: '25em', marginRight: '2em'}} alt='map'/>
+          </div>
+          <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
           <Typography variant='h4' sx={{textAlign: 'center'}}>Contact Us</Typography>
           <br />
           <BusinessIcon/>
           <Typography variant='subtitle1' mt={2} sx={{textAlign: 'center'}}>
-          4218 Burning Memory Lane, Philadelphia, PA         
+          2025 Benjamin Franklin Pkwy, Philadelphia, PA 19130, USA         
           </Typography>
           <br />
           <PhoneIcon/>
@@ -39,6 +44,7 @@ const Contacts = () => {
           <Typography variant='subtitle1' mt={2} sx={{textAlign: 'center'}}>
             store@sinatra.com
           </Typography>
+          </div>
             
       </Paper>
       

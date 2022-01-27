@@ -84,6 +84,7 @@ export default function Register() {
                   id="firstName"
                   label="First Name"
                   autoFocus
+                  color="secondary"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -94,6 +95,7 @@ export default function Register() {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
+                  color="secondary"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -105,6 +107,7 @@ export default function Register() {
                   type="password"
                   id="password"
                   autoComplete="new-password"
+                  color="secondary"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -127,7 +130,7 @@ export default function Register() {
             
             <Grid container justifyContent="center">
               <Grid item>
-                <Link to='/login'>
+                <Link to='/login' style={{color: 'secondary', textDecoration: 'none'}}>
                   Already have an account? Sign in
                 </Link>
               </Grid>

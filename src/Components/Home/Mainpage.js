@@ -6,17 +6,17 @@ import { Box } from '@mui/material';
 const Mainpage = () => {
 return(
    
-    <div class = "main">
+    <div className = "main">
 
-        <div class="second">
-        <div class = "player">
+        <div className ="second">
+        <div className = "player">
         <MusicPlayerSlider/>
         </div>
-        <h1>We bring lifelong <span class="yellow"> music </span> memories into every home.</h1>
+        <h1 className='main-title'>We bring lifelong <span className="yellow"> music </span> memories into every home.</h1>
     
         
         </div>
-        <div class = "decoration"> 
+        <div className = "decoration"> 
          <img id="vinyl" src={vinyl}></img></div>
             </div>
     );
