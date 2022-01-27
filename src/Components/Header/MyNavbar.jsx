@@ -273,8 +273,12 @@ export default function MyNavbar() {
           <Link to='/products' style={{ textDecoration: 'none' }}>
           <Button variant="text" color='primary'>Products</Button>
           </Link>
-          <Button variant="text" color='primary'>About Us</Button>
-          <Button variant="text" color='primary'>Contacts</Button>
+          <Link to='/about' style={{ textDecoration: 'none' }}>
+            <Button variant="text" color='primary'>About Us</Button>
+          </Link>
+          <Link to='/contacts' style={{ textDecoration: 'none' }}>
+            <Button variant="text" color='primary'>Contacts</Button>
+          </Link>
           </Box>
 
           <Box sx={{ flexGrow: 1 }} />
