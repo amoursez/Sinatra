@@ -15,11 +15,12 @@ import useSound from "use-sound";
 import mySound from './Frank Sinatra - My Way.mp3';
 
 
-const Widget = styled('div')(({ theme }) => ({
+const Widget = styled('div')(({ theme }) => ({	
   padding: 16,
   borderRadius: 16,
   width: 343,
-  maxWidth: '100%',
+
+  maxWidth: 400,
   margin: 'auto',
   position: 'relative',
   zIndex: 1,
@@ -67,7 +68,7 @@ export default function MusicPlayerSlider() {
 
   return (
 	  
-    <Box sx={{ width: '100%', overflow: 'hidden' }}>
+    <Box sx={{ width: '30%', marginTop: '3%'}}>
       <Widget>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <CoverImage>

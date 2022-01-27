@@ -1,7 +1,42 @@
-#vinyl{
+*{
   padding: 0;
-  margin-left: 50%;
-  height: 1000px;
-  width: 1000px;
+  margin: 0;
+}
+
+.main{
+ padding: 10px;
+ margin-top: 0;
+ background:  #fed053;;
+ display: flex; justify-content: space-between;
+}
+#vinyl{
+  padding: 0; 
+  height: 100%;
+  width: 100%;
+}
+.decoration{
+  width: 50%;
+
+ 
+ /*  align-items: center; */
+ /*  justify-content: flex-end;  */
 
 }
+h1{
+  font-size:80px;
+  width: 70%;
+  padding: 4% 0px 0px 20%;
+  text-shadow: 2px 2px #000000;
+  margin:auto 0;
+  z-index: 1000;
+  color: white;
+  position: absolute;
+  font-family: 'Crete Round', serif;
+}
+
+.yellow{
+  color: rgb(255, 191, 16);
+}
+ .player{
+   margin-left: 30%;
+ }
