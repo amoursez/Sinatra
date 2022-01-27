@@ -16,6 +16,8 @@ import Checkout from './Components/PayForm/Checkout';
 import Content from './Components/Home/Content/Content';
 import Products from './Components/Product/Products';
 import Favorites from './Components/Favorites/Favorites';
+import About from './Components/About/About';
+import Contacts from './Components/Contacts/Contacts';
 
 
 const MyRoutes = () => {
@@ -35,8 +37,8 @@ const MyRoutes = () => {
                     <Route path='/login' element={<Login />} />
                     <Route path='/favorites' element={<Favorites/>} />
                     <Route path='/payform' element={<Checkout/>} />
-
-
+                    <Route path='/about' element={<About />}/>
+                    <Route path='/contacts' element={<Contacts />}/>
                 </Routes>
                 <Footer />
             </BrowserRouter>
