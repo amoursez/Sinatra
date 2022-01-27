@@ -13,7 +13,6 @@ import Register from './Components/Auth/Register/Register';
 import Login from './Components/Auth/Login/Login';
 
 import Checkout from './Components/PayForm/Checkout';
-import Content from './Components/Home/Content/Content';
 import Products from './Components/Product/Products';
 import Favorites from './Components/Favorites/Favorites';
 import About from './Components/About/About';
@@ -26,6 +25,8 @@ const MyRoutes = () => {
             <BrowserRouter>
                 <MyNavbar/>
                 <Routes>
+             
+            
                     <Route path ='/add' element={<AddProduct />}/>
                     <Route path ='/edit/:id' element={<EditProduct/>}/>
 

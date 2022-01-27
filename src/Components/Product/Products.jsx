@@ -1,5 +1,6 @@
 import { Grid } from '@mui/material';
 import React from 'react';
+import PopUp from '../Home/Content/PopUp/PopUp';
 import Sidebar from '../Home/Sidebar/Sidebar';
 import ProductList from './ProductList/ProductList';
 
@@ -7,7 +8,7 @@ const Products = () => {
     return (
         <div>
             
-
+            <PopUp/>
             <Grid sx={{display: 'flex'}}>
                 <Grid item md={3}>
                 <Sidebar/>
