@@ -52,7 +52,8 @@ const TinyText = styled(Typography)({
 
 
 export default function MusicPlayerSlider() {
-  const [playSound] = useSound(mySound);
+  const [playSound,{ stop }] = useSound(mySound);
+  
   const theme = useTheme();
   const duration = 200; // seconds
   const [position, setPosition] = React.useState(32);
@@ -82,7 +83,7 @@ export default function MusicPlayerSlider() {
               Frank Sinatra
             </Typography>
             <Typography noWrap>
-              <b>Fly me the moon</b>
+              <b>My way</b>
             </Typography>
             <Typography noWrap letterSpacing={-0.25}>
               the best of the bests
@@ -155,9 +156,10 @@ export default function MusicPlayerSlider() {
               <PlayArrowRounded
                 sx={{ fontSize: '3rem' }}
                 htmlColor={mainIconColor}
+				onClick={playSound}
               />
             ) : (
-              <PauseRounded sx={{ fontSize: '3rem' }} htmlColor={mainIconColor} onClick={playSound}/>
+              <PauseRounded sx={{ fontSize: '3rem' }} htmlColor={mainIconColor} onClick={()=> stop()}/>
             )}
           </IconButton>
           <IconButton aria-label="next song">
