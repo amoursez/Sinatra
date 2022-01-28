@@ -191,24 +191,41 @@ export default function MyNavbar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
+      <Link to='/products' style={{ textDecoration: 'none', color:'inherit' }} >
+          <Button variant="text" color='inherit' className='menubar'>Products</Button>
+          </Link>
       </MenuItem>
       <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
+          <Link to='/about' style={{ textDecoration: 'none', color:'Background' }}>
+            <Button variant="text" color='inherit' className='menubar'>About Us</Button>
+          </Link>
+      </MenuItem>
+      <MenuItem>
+          <Link to='/contacts' style={{ textDecoration: 'none', color:'inherit' }}>
+            <Button variant="text" color='inherit' className='menubar'>Contacts</Button>
+          </Link>
+      </MenuItem>
+      <MenuItem>
+      {currentUser ? (
+          <Link to='/cart' style={{color: 'inherit', textDecoration: 'none'}}>
+            <IconButton color='inherit' size="small">
+                <Badge>
+                    <ShoppingCartIcon/><p>Cart</p>
+                </Badge> 
+            </IconButton>
+
+          </Link>
+          ) : (null)}
+      </MenuItem>
+      <MenuItem>
+      {currentUser ? (
+          <Link to='/favorites' style={{color: 'inherit', textDecoration: 'none'}}>
+            <IconButton aria-label="fav" color="inherit" size="small">
+                <FavoriteIcon />
+                <p>Favorite</p>
+            </IconButton>
+          </Link>
+          ) : (null)}
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -222,6 +239,19 @@ export default function MyNavbar() {
         </IconButton>
         <p>Profile</p>
       </MenuItem>
+      <MenuItem>
+      {currentUser? (
+                <IconButton 
+                
+                aria-label='logout'
+                color="inherit"
+                 disabled={!currentUser} onClick={handleLogout} size="small">
+                  <LogoutIcon/>
+                  <p>Logout</p>
+                </IconButton>) :
+                (null)
+            }
+      </MenuItem>
     </Menu>
   );
   
@@ -232,6 +262,7 @@ export default function MyNavbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" color={"secondary"}>
         <Toolbar>
+
           <Typography
             variant="h6"
             noWrap
@@ -261,15 +292,15 @@ export default function MyNavbar() {
               onChange={handleValue}
             />
           </Search>
-          <Box sx={{ flexGrow: 1}}>
+          <Box sx={{ flexGrow: 1}} className='menubar'>
           <Link to='/products' style={{ textDecoration: 'none' }}>
-          <Button variant="text" color='primary'>Products</Button>
+          <Button variant="text" color='primary' className='menubar'>Products</Button>
           </Link>
           <Link to='/about' style={{ textDecoration: 'none' }}>
-            <Button variant="text" color='primary'>About Us</Button>
+            <Button variant="text" color='primary' className='menubar'>About Us</Button>
           </Link>
           <Link to='/contacts' style={{ textDecoration: 'none' }}>
-            <Button variant="text" color='primary'>Contacts</Button>
+            <Button variant="text" color='primary' className='menubar'>Contacts</Button>
           </Link>
           </Box>
 
@@ -284,7 +315,7 @@ export default function MyNavbar() {
 
             {currentUser?.email}
             {currentUser? (
-                <Button variant='success' disabled={!currentUser} onClick={handleLogout}>
+                <Button variant='success' disabled={!currentUser} onClick={handleLogout} className='menubar'>
                   <LogoutIcon/>
                 </Button>) :
                 (null)
@@ -295,8 +326,7 @@ export default function MyNavbar() {
           {currentUser ? (
           <Link to='/cart' style={{color: 'white'}}>
             <IconButton color='inherit'>
-                <Badge badgeContent={cartLength} color='error'
-                  >
+                <Badge>
                     <ShoppingCartIcon/>
                 </Badge> 
             </IconButton>
