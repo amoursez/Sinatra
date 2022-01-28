@@ -12,8 +12,9 @@ return(
         <div className = "player">
         <MusicPlayerSlider/>
         </div>
+        <div className = "adaptive">
         <h1 className='main-title'>We bring lifelong <span className="yellow"> music </span> memories into every home.</h1>
-    
+        </div>
         
         </div>
         <div className = "decoration"> 

@@ -70,7 +70,7 @@ export default function ProductCard({item}) {
     )
   return (
     <ThemeProvider theme={customTheme}>
-        <Card sx={{ maxWidth: 420 }}>
+        <Card sx={{ maxWidth: 700 }}>
             <Link to={`/detail/${item.id}`} style={{textDecoration: 'none', color: 'black'}}>
                 <CardContent>
                     <Typography gutterBottom variant="h6" component="div">

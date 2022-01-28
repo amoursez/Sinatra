@@ -262,7 +262,7 @@ export default function MyNavbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" color={"secondary"}>
         <Toolbar>
-        
+
           <Typography
             variant="h6"
             noWrap
