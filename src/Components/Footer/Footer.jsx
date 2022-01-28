@@ -20,7 +20,7 @@ function Copyright(props) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        Princesses website
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -70,8 +70,8 @@ const tiers = [
 
 const footers = [
   {
-    title: 'Company',
-    description: ['Team', 'History', 'Contact us', 'Locations'],
+    title: 'Sinatra',
+    description: [ 'Contact us', 'About us', 'Products'],
   },
   {
     title: 'Features',
