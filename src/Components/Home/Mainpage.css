@@ -8,6 +8,7 @@
  margin-top: 0;
  background:  #fed053;;
  display: flex; justify-content: space-between;
+ position: relative;
 }
 #vinyl{
   padding: 0; 
@@ -16,11 +17,6 @@
 }
 .decoration{
   width: 50%;
-
- 
- /*  align-items: center; */
- /*  justify-content: flex-end;  */
-
 }
 .main-title{
   font-size:80px;
@@ -32,6 +28,7 @@
   color: white;
   position: absolute;
   font-family: 'Crete Round', serif;
+  height: 100%;
 }
 
 .yellow{
@@ -40,4 +37,41 @@
  .player{
   margin-left: 34%;
   margin-top: 10%;
+ }
+
+ @media all and (max-width: 1230px){
+  .main-title{
+    font-size:205%;
+   /*  width: 80%; */
+    height: 50%;
+    z-index: 1;
+  }
+  .css-1kxp130 {
+    padding: 16px;
+    border-radius: 16px;
+    width: 202px  !important;
+    max-width: 400px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255,255,255,0.4);
+    -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(40px);
+    height: 233px  !important;
+}
+.main-title{
+  width: 400px;
+}
+   
+ }
+
+ @media all and (max-width: 425px){
+.player{
+  display: none;
+}
+.main-title{
+  width: 200px !important;
+}
+   
+
  }

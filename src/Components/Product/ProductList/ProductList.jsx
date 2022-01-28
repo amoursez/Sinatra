@@ -44,7 +44,7 @@ export default function ProductList() {
     }
 
   return (
-     <Box sx={{ flexGrow: 1, margin: 8, display: 'flex', flexDirection: 'column', alignItems: 'center'}} >         
+     <Box sx={{ flexGrow: 1, margin: 8, display: 'flex', flexDirection: 'column', alignItems: 'center', flexWrap: "wrap"}} >         
       <Grid container spacing={{ xs: 2, md: 4 }} columns={{ xs: 4, sm: 8, md: 12 }}>
             {
                 products ? (
