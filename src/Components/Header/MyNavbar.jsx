@@ -23,6 +23,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { Button } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 
 
@@ -292,13 +293,15 @@ export default function MyNavbar() {
 
             {currentUser?.email}
             {currentUser? (
-                <Button variant='success' disabled={!currentUser} onClick={handleLogout}>Log out</Button>) :
+                <Button variant='success' disabled={!currentUser} onClick={handleLogout}>
+                  <LogoutIcon/>
+                </Button>) :
                 (null)
 
             }
 
           
-          
+          {currentUser ? (
           <Link to='/cart' style={{color: 'white'}}>
             <IconButton color='inherit'>
                 <Badge badgeContent={cartLength} color='error'
@@ -307,11 +310,14 @@ export default function MyNavbar() {
                 </Badge> 
             </IconButton>
           </Link>
+          ) : (null)}
+          {currentUser ? (
           <Link to='/favorites' style={{color: 'white'}}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                 <FavoriteIcon /> 
             </IconButton>
           </Link>
+          ) : (null)}
 
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             {!currentUser ? 

@@ -50,18 +50,22 @@ export default function ProductCard({item}) {
             </IconButton>) 
             : (null)}
             
+            {currentUser? (
             <IconButton 
                 aria-label='share' 
                 onClick={() => addProductInFavorites(item)} 
                 color={checkProductInFavorites(item.id) ? 'warning': 'secondary'}>
                 <FavoriteIcon/>
             </IconButton>
+            ) : (null)}
+            {currentUser? (
             <IconButton 
                 aria-label='share' 
                 onClick={() => addProductInCart(item)} 
                 color={checkProductInCart(item.id) ? 'warning': 'secondary'}>
                 <ShoppingCartIcon/>
             </IconButton>
+            ) : (null)}
         </CardActions>
     )
   return (
